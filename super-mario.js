@@ -11,6 +11,10 @@ function setup() {
   resetGame();
 }
 
+function preload() {
+  marioImg = loadImage("./mario.png");
+}
+
 function resetGame() {
   score = 0;
   cameraX = 0;
@@ -123,10 +127,7 @@ class Player {
   }
 
   show() {
-    fill(200, 0, 100); // Mario Red/Pink
-    rect(this.x, this.y, this.w, this.h, 5);
-    fill(0); // Eyes
-    rect(this.x + 20, this.y + 10, 5, 5);
+    image(marioImg, this.x, this.y, this.w, this.h);
   }
 }
 
